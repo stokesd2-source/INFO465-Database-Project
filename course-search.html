@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Courses | Course Registration System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1 class="logo">Course Registration System</h1>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Main Navigation" id="mainNav">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-search.html" class="active">Search</a></li>
+      <li><a href="registration.html">Register</a></li>
+      <li><a href="instructor.html">Instructor</a></li>
+      <li><a href="enrollment.html">Enrollment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h2 class="page-title">Course Search</h2>
+  <p class="page-subtitle">Search by name, course ID, department, or instructor. Results update as you type.</p>
+
+  <section class="card" style="margin-bottom: 20px;">
+    <div class="search-bar">
+      <input type="text" id="courseInput" placeholder="Search by name or ID (e.g. CS101, Calculus)…" aria-label="Search courses">
+      <button id="searchBtn" class="btn btn-primary">Search</button>
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <select id="deptFilter" aria-label="Filter by department">
+        <option value="">All Departments</option>
+        <option value="BIO">Biology</option>
+        <option value="CS">Computer Science</option>
+        <option value="ENG">English</option>
+        <option value="HIST">History</option>
+        <option value="MATH">Mathematics</option>
+        <option value="PHYS">Physics</option>
+      </select>
+      <input type="text" id="courseNumberFilter" placeholder="Course number (e.g. 101)" style="max-width:200px;">
+      <input type="text" id="instructorFilter" placeholder="Instructor ID" style="max-width:160px;">
+    </div>
+  </section>
+
+  <section id="resultsContainer">
+    <div id="courseResults"></div>
+    <div id="noResultsMessage" style="display:none;">
+      <div class="empty-state">
+        <div class="icon">🔍</div>
+        <p>No courses found matching your search. Try different keywords or filters.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Course Registration System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

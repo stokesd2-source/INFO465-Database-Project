@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Portal | Course Registration System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1 class="logo">Course Registration System</h1>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Main Navigation" id="mainNav">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-search.html">Search</a></li>
+      <li><a href="registration.html">Register</a></li>
+      <li><a href="instructor.html" class="active">Instructor</a></li>
+      <li><a href="enrollment.html">Enrollment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h2 class="page-title">Instructor Portal</h2>
+  <p class="page-subtitle">Faculty login to view your assigned sessions and current enrollment counts.</p>
+
+  <section class="card" id="instructorLoginSection" style="max-width:420px;">
+    <h3>Faculty Login</h3>
+    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:20px;">Enter your instructor ID and password to access your schedule.</p>
+
+    <div class="form-row">
+      <label for="instructorId">Instructor ID</label>
+      <input type="text" id="instructorId" placeholder="e.g. INST01" autocomplete="username">
+    </div>
+
+    <div class="form-row" style="margin-top:14px;">
+      <label for="instructorPassword">Password</label>
+      <input type="password" id="instructorPassword" placeholder="Enter your password" autocomplete="current-password">
+    </div>
+
+    <p id="instructorLoginMsg" style="color:#922b21;font-size:0.88rem;margin-top:10px;min-height:1.2em;"></p>
+
+    <button id="btnInstructorLogin" class="btn btn-primary btn-full">Sign In</button>
+
+    <div class="demo-accounts" style="margin-top:24px;">
+      <p class="demo-label">Demo accounts (password: any)</p>
+      <div class="demo-grid">
+        <div class="demo-item" onclick="fillInstructorDemo('INST01')"><strong>INST01</strong><span>Dr. Johnson</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST02')"><strong>INST02</strong><span>Prof. Williams</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST03')"><strong>INST03</strong><span>Dr. Brown</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST04')"><strong>INST04</strong><span>Dr. Martinez</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST05')"><strong>INST05</strong><span>Prof. Davis</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST06')"><strong>INST06</strong><span>Dr. Thompson</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST07')"><strong>INST07</strong><span>Prof. Anderson</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST08')"><strong>INST08</strong><span>Dr. Wilson</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST09')"><strong>INST09</strong><span>Prof. Garcia</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST10')"><strong>INST10</strong><span>Dr. Lee</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST11')"><strong>INST11</strong><span>Prof. Harris</span></div>
+        <div class="demo-item" onclick="fillInstructorDemo('INST12')"><strong>INST12</strong><span>Dr. Clark</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="scheduleCard" hidden>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+      <div>
+        <h3 style="margin-bottom:2px;">My Schedule — Spring 2026</h3>
+        <p style="color:var(--muted);font-size:0.88rem;">Logged in as <strong id="instructorName"></strong></p>
+      </div>
+      <button id="btnInstructorLogout" class="btn btn-secondary" hidden>Log Out</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Session</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Room</th>
+            <th>Modality</th>
+            <th>Enrolled</th>
+          </tr>
+        </thead>
+        <tbody id="instructorScheduleBody"></tbody>
+      </table>
+    </div>
+
+    <div id="scheduleEmptyMsg" class="empty-state" hidden>
+      <div class="icon">📭</div>
+      <p>No sessions assigned for this semester.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Course Registration System</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function fillInstructorDemo(id) {
+    const idEl  = document.getElementById('instructorId');
+    const pwdEl = document.getElementById('instructorPassword');
+    if (idEl)  idEl.value  = id;
+    if (pwdEl) pwdEl.value = 'password123';
+    if (idEl)  idEl.focus();
+  }
+</script>
+</body>
+</html>

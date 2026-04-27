@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Enrollment | Course Registration System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1 class="logo">Course Registration System</h1>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Main Navigation" id="mainNav">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-search.html">Search</a></li>
+      <li><a href="registration.html">Register</a></li>
+      <li><a href="instructor.html">Instructor</a></li>
+      <li><a href="enrollment.html" class="active">Enrollment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h2 class="page-title">My Enrolled Sessions</h2>
+  <p class="page-subtitle">Viewing schedule for student <strong>STU101</strong> — Spring 2026</p>
+
+  <div id="enrollmentSummary" class="enrollment-summary" style="display:none;">
+    <div class="summary-stat">
+      <strong id="totalCourses">0</strong>
+      <span>Courses</span>
+    </div>
+    <div class="summary-stat">
+      <strong id="totalCredits">0</strong>
+      <span>Credit Hours</span>
+    </div>
+  </div>
+
+  <!-- Weekly Calendar View -->
+  <section class="card" style="margin-bottom: 24px;">
+    <h3 style="margin-bottom: 16px;">Weekly Schedule</h3>
+    <div class="calendar-grid" id="calendarView">
+      <div class="calendar-header">Monday</div>
+      <div class="calendar-header">Tuesday</div>
+      <div class="calendar-header">Wednesday</div>
+      <div class="calendar-header">Thursday</div>
+      <div class="calendar-header">Friday</div>
+      <div class="calendar-day" id="calendar-Monday"></div>
+      <div class="calendar-day" id="calendar-Tuesday"></div>
+      <div class="calendar-day" id="calendar-Wednesday"></div>
+      <div class="calendar-day" id="calendar-Thursday"></div>
+      <div class="calendar-day" id="calendar-Friday"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Session</th>
+            <th>Instructor</th>
+            <th>Schedule</th>
+            <th>Room</th>
+            <th>Credits</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="enrollmentTableBody"></tbody>
+      </table>
+    </div>
+    <div id="enrollmentEmpty" class="empty-state" style="display:none;">
+      <div class="icon">📭</div>
+      <p>You are not enrolled in any sessions yet.</p>
+      <a href="registration.html" class="btn btn-primary" style="margin-top:14px; text-decoration:none;">Browse Sessions</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Course Registration System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Course Registration System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1 class="logo">Course Registration System</h1>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Main Navigation" id="mainNav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="course-search.html">Search</a></li>
+      <li><a href="registration.html">Register</a></li>
+      <li><a href="instructor.html">Instructor</a></li>
+      <li><a href="enrollment.html">Enrollment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="hero">
+    <h2>Student Dashboard</h2>
+    <p>Manage your courses, view schedules, and register for the upcoming semester — all in one place.</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <strong>26</strong>
+        <span>Courses Available</span>
+      </div>
+      <div class="hero-stat">
+        <strong>Spring 2026</strong>
+        <span>Current Semester</span>
+      </div>
+      <div class="hero-stat">
+        <strong>Open</strong>
+        <span>Registration Status</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <div class="dashboard-card">
+      <div class="card-icon">🔍</div>
+      <h3>Course Search</h3>
+      <p>Browse the full catalog and find classes by department, instructor, or course number.</p>
+      <div class="actions">
+        <a href="course-search.html" class="btn btn-primary">Open Search</a>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="card-icon">📋</div>
+      <h3>Registration</h3>
+      <p>Enroll in sessions for the current semester. Check availability and manage your schedule.</p>
+      <div class="actions">
+        <a href="registration.html" class="btn btn-primary">Manage Schedule</a>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="card-icon">📅</div>
+      <h3>My Enrollment</h3>
+      <p>View all sessions you're currently enrolled in, track credit hours, and drop courses.</p>
+      <div class="actions">
+        <a href="enrollment.html" class="btn btn-primary">View Schedule</a>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="card-icon">🎓</div>
+      <h3>Instructor Portal</h3>
+      <p>Faculty access for viewing assigned sessions, class rosters, and grade management.</p>
+      <div class="actions">
+        <a href="instructor.html" class="btn btn-primary">Faculty Login</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Course Registration System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

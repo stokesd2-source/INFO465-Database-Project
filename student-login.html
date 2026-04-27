@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | Course Registration System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+
+<header class="navbar">
+  <h1 class="logo">Course Registration System</h1>
+</header>
+
+<main class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="login-icon">🎓</div>
+      <h2>Student Login</h2>
+      <p>Sign in with your university credentials to access course registration.</p>
+    </div>
+
+    <div class="form-row">
+      <label for="loginUsername">Username</label>
+      <input type="text" id="loginUsername" placeholder="e.g. Jsmith" autocomplete="username" autofocus>
+    </div>
+
+    <div class="form-row" style="margin-top:14px;">
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password">
+    </div>
+
+    <p id="loginError" class="login-error" style="display:none;"></p>
+
+    <button id="btnStudentLogin" class="btn btn-primary btn-full">Sign In</button>
+
+    <div class="login-footer">
+      <p>Faculty? <a href="instructor.html">Instructor login →</a></p>
+    </div>
+
+    <div class="demo-accounts">
+      <p class="demo-label">Demo accounts</p>
+      <div class="demo-grid">
+        <div class="demo-item" onclick="fillDemo('Jsmith','password123')">
+          <strong>Jsmith</strong><span>Joe Smith</span>
+        </div>
+        <div class="demo-item" onclick="fillDemo('Ajohnson','password123')">
+          <strong>Ajohnson</strong><span>Alice Johnson</span>
+        </div>
+        <div class="demo-item" onclick="fillDemo('Bwilliams','password123')">
+          <strong>Bwilliams</strong><span>Bob Williams</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Course Registration System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

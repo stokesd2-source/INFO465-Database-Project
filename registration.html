@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration | Course Registration System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1 class="logo">Course Registration System</h1>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Main Navigation" id="mainNav">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-search.html">Search</a></li>
+      <li><a href="registration.html" class="active">Register</a></li>
+      <li><a href="instructor.html">Instructor</a></li>
+      <li><a href="enrollment.html">Enrollment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h2 class="page-title">Session Registration</h2>
+  <p class="page-subtitle">Filter sessions by department or course number, then enroll. Prerequisites are checked automatically.</p>
+
+  <div id="creditTracker" style="display:none; background:#0d0d0d; color:white; border-radius:14px; padding:18px 24px; margin-bottom:20px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+    <div>
+      <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.07em;color:rgba(255,255,255,0.5);">Credits Enrolled</span>
+      <div style="font-family:'DM Serif Display',serif; font-size:1.8rem; color:#ffb300; line-height:1;">
+        <span id="creditUsed">0</span><span style="font-size:1rem; color:rgba(255,255,255,0.4);"> / 18</span>
+      </div>
+    </div>
+    <div style="flex:1; min-width:180px;">
+      <div style="height:8px; background:rgba(255,255,255,0.12); border-radius:999px; overflow:hidden;">
+        <div id="creditBar" style="height:100%; border-radius:999px; background:#ffb300; transition:width 0.3s ease; width:0%;"></div>
+      </div>
+      <div style="font-size:0.78rem; color:rgba(255,255,255,0.45); margin-top:5px;"><span id="creditRemaining">18</span> credits remaining</div>
+    </div>
+  </div>
+
+  <section class="card">
+    <div class="actions" style="margin-top:0;">
+      <select id="regDeptFilter" aria-label="Filter by department">
+        <option value="All">All Departments</option>
+        <option value="BIO">Biology</option>
+        <option value="CS">Computer Science</option>
+        <option value="ENG">English</option>
+        <option value="HIST">History</option>
+        <option value="MATH">Mathematics</option>
+        <option value="PHYS">Physics</option>
+      </select>
+      <input type="text" id="regNumFilter" placeholder="Course number (e.g. 101)" style="max-width:200px;">
+      <button id="btnSearchReg" class="btn btn-primary">Filter Sessions</button>
+    </div>
+
+    <div class="table-wrapper" id="registrationContainer">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Session</th>
+            <th>Instructor</th>
+            <th>Schedule / Room</th>
+            <th>Prerequisite</th>
+            <th>Capacity</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="registrationTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Course Registration System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
